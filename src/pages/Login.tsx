@@ -25,9 +25,9 @@ const Login: React.FC = () => {
             type="email"
             id="email"
             {...register('email', { required: 'Email is required' })}
-            className="w-full px-3 py-2 border rounded-md"
+            className="w-full px-3 py-2 bg-dark-surface border border-dark-border rounded-md"
           />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+          {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>}
         </div>
         <div>
           <label htmlFor="password" className="block mb-1">Password</label>
@@ -35,16 +35,16 @@ const Login: React.FC = () => {
             type="password"
             id="password"
             {...register('password', { required: 'Password is required' })}
-            className="w-full px-3 py-2 border rounded-md"
+            className="w-full px-3 py-2 bg-dark-surface border border-dark-border rounded-md"
           />
-          {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+          {errors.password && <p className="text-red-400 text-sm mt-1">{errors.password.message}</p>}
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">
+        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
           Login
         </button>
       </form>
       <p className="mt-4 text-center">
-        Don't have an account? <Link to="/register" className="text-blue-500 hover:underline">Register here</Link>
+        Don't have an account? <Link to="/register" className="text-blue-400 hover:underline">Register here</Link>
       </p>
     </div>
   );

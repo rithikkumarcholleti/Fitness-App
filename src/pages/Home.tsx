@@ -10,25 +10,25 @@ const Home: React.FC = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <FeatureCard
-          icon={<Dumbbell className="h-12 w-12 mb-4 text-blue-500" />}
+          icon={<Dumbbell className="h-12 w-12 mb-4 text-blue-400" />}
           title="Workout Plans"
           description="Customized plans for all levels"
           link="/workout-plans"
         />
         <FeatureCard
-          icon={<Users className="h-12 w-12 mb-4 text-green-500" />}
+          icon={<Users className="h-12 w-12 mb-4 text-green-400" />}
           title="Community"
           description="Connect with fellow gym-goers"
           link="/community"
         />
         <FeatureCard
-          icon={<Calendar className="h-12 w-12 mb-4 text-purple-500" />}
+          icon={<Calendar className="h-12 w-12 mb-4 text-purple-400" />}
           title="Schedule"
           description="Plan your workouts efficiently"
           link="/schedule"
         />
         <FeatureCard
-          icon={<TrendingUp className="h-12 w-12 mb-4 text-red-500" />}
+          icon={<TrendingUp className="h-12 w-12 mb-4 text-red-400" />}
           title="Progress Tracking"
           description="Monitor your fitness journey"
           link="/progress"
@@ -40,11 +40,11 @@ const Home: React.FC = () => {
 
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description: string; link: string }> = ({ icon, title, description, link }) => {
   return (
-    <Link to={link} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+    <Link to={link} className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
       <div className="flex flex-col items-center">
         {icon}
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
-        <p className="text-gray-600">{description}</p>
+        <p className="text-gray-400">{description}</p>
       </div>
     </Link>
   );
