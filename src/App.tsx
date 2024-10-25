@@ -8,6 +8,9 @@ import Profile from './pages/Profile';
 import WorkoutPlans from './pages/WorkoutPlans';
 import ExerciseDatabase from './pages/ExerciseDatabase';
 import MembershipPlans from './pages/MembershipPlans';
+import Community from './pages/Community';
+import Schedule from './pages/Schedule';
+import Progress from './pages/Progress';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path="/workout-plans" element={<WorkoutPlans />} />
             <Route path="/exercise-database" element={<ExerciseDatabase />} />
             <Route path="/membership-plans" element={<MembershipPlans />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/progress" element={<Progress />} />
           </Routes>
         </div>
       </div>
