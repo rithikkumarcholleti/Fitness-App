@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dumbbell, Users, Calendar, TrendingUp } from 'lucide-react';
 import CommunityCard from '../components/community/CommunityCard';
@@ -8,27 +8,33 @@ import ActivityTracker from '../components/progress/ActivityTracker';
 const featuredMembers = [
   {
     id: '1',
-    name: 'Sarah Johnson',
+    name: 'Priya Sharma',
     age: 28,
     gender: 'Female',
     level: 'Advanced',
-    interests: ['Powerlifting', 'CrossFit'],
-    imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
+    interests: ['Yoga', 'CrossFit'],
+    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
     isConnected: false
   },
   {
     id: '2',
-    name: 'Michael Chen',
+    name: 'Arjun Patel',
     age: 32,
     gender: 'Male',
     level: 'Intermediate',
-    interests: ['Bodybuilding', 'Boxing'],
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
+    interests: ['Calisthenics', 'Boxing'],
+    imageUrl: 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
     isConnected: true
   }
 ];
 
 const Home: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  const toggleSection = (section: string) => {
+    setActiveSection(activeSection === section ? null : section);
+  };
+
   return (
     <div className="space-y-12">
       <div className="text-center mb-12">
@@ -45,32 +51,41 @@ const Home: React.FC = () => {
           </div>
         </Link>
         
-        <Link to="/community" className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <button 
+          onClick={() => toggleSection('community')} 
+          className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+        >
           <div className="flex flex-col items-center">
             <Users className="h-12 w-12 mb-4 text-green-400" />
             <h2 className="text-xl font-semibold mb-2">Community</h2>
             <p className="text-gray-400">Connect with fellow gym-goers</p>
           </div>
-        </Link>
+        </button>
         
-        <Link to="/schedule" className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <button 
+          onClick={() => toggleSection('schedule')} 
+          className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+        >
           <div className="flex flex-col items-center">
             <Calendar className="h-12 w-12 mb-4 text-purple-400" />
             <h2 className="text-xl font-semibold mb-2">Schedule</h2>
             <p className="text-gray-400">Plan your workouts efficiently</p>
           </div>
-        </Link>
+        </button>
         
-        <Link to="/progress" className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <button 
+          onClick={() => toggleSection('progress')} 
+          className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+        >
           <div className="flex flex-col items-center">
             <TrendingUp className="h-12 w-12 mb-4 text-red-400" />
             <h2 className="text-xl font-semibold mb-2">Progress Tracking</h2>
             <p className="text-gray-400">Monitor your fitness journey</p>
           </div>
-        </Link>
+        </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {activeSection === 'community' && (
         <div className="bg-dark-surface rounded-lg p-6">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-xl font-bold">Featured Community Members</h3>
@@ -78,21 +93,25 @@ const Home: React.FC = () => {
               View All
             </Link>
           </div>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {featuredMembers.map(member => (
               <CommunityCard key={member.id} member={member} />
             ))}
           </div>
         </div>
+      )}
 
-        <div>
+      {activeSection === 'schedule' && (
+        <div className="bg-dark-surface rounded-lg p-6">
           <WorkoutSchedule />
         </div>
-      </div>
+      )}
 
-      <div className="bg-dark-surface rounded-lg p-6">
-        <ActivityTracker />
-      </div>
+      {activeSection === 'progress' && (
+        <div className="bg-dark-surface rounded-lg p-6">
+          <ActivityTracker />
+        </div>
+      )}
     </div>
   );
 };

@@ -4,42 +4,42 @@ import CommunityCard from '../components/community/CommunityCard';
 const communityMembers = [
   {
     id: '1',
-    name: 'Sarah Johnson',
+    name: 'Priya Sharma',
     age: 28,
     gender: 'Female',
     level: 'Advanced',
-    interests: ['Powerlifting', 'CrossFit', 'Yoga'],
-    imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
+    interests: ['Yoga', 'CrossFit', 'Meditation'],
+    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
     isConnected: false
   },
   {
     id: '2',
-    name: 'Michael Chen',
+    name: 'Arjun Patel',
     age: 32,
     gender: 'Male',
     level: 'Intermediate',
-    interests: ['Bodybuilding', 'Nutrition', 'Boxing'],
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
+    interests: ['Calisthenics', 'Boxing', 'Martial Arts'],
+    imageUrl: 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
     isConnected: true
   },
   {
     id: '3',
-    name: 'Emma Wilson',
+    name: 'Ananya Desai',
     age: 25,
     gender: 'Female',
     level: 'Beginner',
-    interests: ['HIIT', 'Running', 'Pilates'],
-    imageUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
+    interests: ['Yoga', 'Running', 'Pilates'],
+    imageUrl: 'https://images.unsplash.com/photo-1592124549776-a7f0cc973b24?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
     isConnected: false
   },
   {
     id: '4',
-    name: 'David Kim',
+    name: 'Rahul Verma',
     age: 30,
     gender: 'Male',
     level: 'Advanced',
-    interests: ['Calisthenics', 'Martial Arts', 'Swimming'],
-    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
+    interests: ['Powerlifting', 'Yoga', 'Swimming'],
+    imageUrl: 'https://images.unsplash.com/photo-1578632292335-df3abbb0d586?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80',
     isConnected: false
   }
 ] as const;
