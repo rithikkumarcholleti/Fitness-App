@@ -115,8 +115,9 @@ const WorkoutSchedule: React.FC = () => {
       <div className="bg-dark-surface rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold">15-Day Workout Calendar</h3>
-          <button onClick={() => setShowCalendar(false)} className="text-gray-400 hover:text-gray-300">
-            <X className="w-6 h-6" />
+          <button onClick={() => setShowCalendar(false)} className="text-gray-400 hover:text-gray-300 focus:outline-none p-0"
+          style={{ backgroundColor: 'transparent' }}>
+            <X className="w-6 h-6 "  />
           </button>
         </div>
         <div className="space-y-4">
@@ -131,7 +132,7 @@ const WorkoutSchedule: React.FC = () => {
                   {!workout && isEditing && (
                     <button
                       onClick={() => handleAddWorkout(date)}
-                      className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
+                      className="text-white-400 hover:text-gray-300 flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none"
                     >
                       <Plus className="w-4 h-4" /> Add Workout
                     </button>
@@ -151,9 +152,10 @@ const WorkoutSchedule: React.FC = () => {
                               <option key={type} value={type}>{type}</option>
                             ))}
                           </select>
-                          <button
+                          <button 
                             onClick={() => handleRemoveWorkout(editedSchedule.indexOf(workout))}
-                            className="text-red-400 hover:text-red-300"
+                            className="text-white-400 hover:text-gray-500 focus:outline-none p-0" 
+                            style={{ backgroundColor: 'transparent' }} 
                           >
                             <X className="w-4 h-4" />
                           </button>
@@ -224,7 +226,7 @@ const WorkoutSchedule: React.FC = () => {
           <div className="mt-6 flex justify-end">
             <button
               onClick={handleSave}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 flex items-center gap-2"
+              className="bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-400 flex items-center gap-2"
             >
               <Save className="w-4 h-4" /> Save Changes
             </button>
@@ -242,24 +244,24 @@ const WorkoutSchedule: React.FC = () => {
           This Week's Schedule
         </h3>
         <div className="flex gap-4">
-          <button
-            onClick={() => {
-              setShowCalendar(true);
-              setIsEditing(false);
-            }}
-            className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1"
-          >
-            <CalendarIcon className="w-4 h-4" /> View Full Calendar
-          </button>
-          <button
-            onClick={() => {
-              setShowCalendar(true);
-              setIsEditing(true);
-            }}
-            className="text-green-400 hover:text-green-300 text-sm flex items-center gap-1"
-          >
-            <Edit2 className="w-4 h-4" /> Edit Schedule
-          </button>
+        <button
+          onClick={() => {
+            setShowCalendar(true);
+            setIsEditing(false);
+          }}
+          className="text-white-400 hover:text-gray-300 text-sm flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none"
+        >
+        <CalendarIcon className="w-4 h-4" /> View Full Calendar
+        </button>
+        <button
+          onClick={() => {
+            setShowCalendar(true);
+            setIsEditing(true);
+          }}
+          className="text-white-400 hover:text-gray-300 text-sm flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none"
+        >
+        <Edit2 className="w-4 h-4" /> Edit Schedule
+        </button>
         </div>
       </div>
 

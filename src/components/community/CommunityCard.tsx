@@ -5,7 +5,7 @@ interface CommunityMember {
   id: string;
   name: string;
   age: number;
-  gender: 'Male' | 'Female' | 'Other';
+  gender: 'Male' | 'Female' ;
   level: string;
   interests: string[];
   imageUrl: string;

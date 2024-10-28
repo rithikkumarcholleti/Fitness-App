@@ -89,7 +89,7 @@ const Home: React.FC = () => {
         <div className="bg-dark-surface rounded-lg p-6">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-xl font-bold">Featured Community Members</h3>
-            <Link to="/community" className="text-blue-400 hover:text-blue-300 text-sm">
+            <Link to="/community" className="text-white-400 hover:text-gray-500 text-sm">
               View All
             </Link>
           </div>

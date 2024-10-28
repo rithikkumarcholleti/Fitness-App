@@ -12,11 +12,11 @@ const Navbar: React.FC = () => {
             <span className="font-bold text-xl">GymApp</span>
           </Link>
           <div className="flex space-x-4">
-            <Link to="/workout-plans" className="hover:text-blue-300">Workout Plans</Link>
-            <Link to="/exercise-database" className="hover:text-blue-300">Exercises</Link>
-            <Link to="/membership-plans" className="hover:text-blue-300">Memberships</Link>
-            <Link to="/profile" className="hover:text-blue-300">Profile</Link>
-            <Link to="/login" className="hover:text-blue-300">Login</Link>
+            <Link to="/workout-plans" className="hover:text-red-300">Workout Plans</Link>
+            <Link to="/exercise-database" className="hover:text-red-300">Exercises</Link>
+            <Link to="/membership-plans" className="hover:text-red-300">Memberships</Link>
+            <Link to="/profile" className="hover:text-red-300">Profile</Link>
+            <Link to="/login" className="hover:text-red-300">Login</Link>
           </div>
         </div>
       </div>

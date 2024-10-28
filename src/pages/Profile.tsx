@@ -63,19 +63,20 @@ const Profile: React.FC = () => {
             />
             {errors.height && <p className="text-red-500 text-sm mt-1">{errors.height.message}</p>}
           </div>
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
-            Save Changes
+          <button type="submit" className="bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600">
+             Save Changes
           </button>
+
         </form>
       ) : (
         <div>
-          <p><strong>Name:</strong> John Doe</p>
-          <p><strong>Age:</strong> 30</p>
-          <p><strong>Weight:</strong> 75 kg</p>
-          <p><strong>Height:</strong> 180 cm</p>
+          <p><strong>Name:</strong> Rithik Kumar Cholleti</p>
+          <p><strong>Age:</strong> 21</p>
+          <p><strong>Weight:</strong> 70 kg</p>
+          <p><strong>Height:</strong> 161 cm</p>
           <button
             onClick={() => setIsEditing(true)}
-            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            className="mt-4 bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600"
           >
             Edit Profile
           </button>
