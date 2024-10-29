@@ -115,7 +115,7 @@ const WorkoutSchedule: React.FC = () => {
       <div className="bg-dark-surface rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold">15-Day Workout Calendar</h3>
-          <button onClick={() => setShowCalendar(false)} className="text-gray-400 hover:text-gray-300 focus:outline-none p-0"
+          <button onClick={() => setShowCalendar(false)} className="text-white-400 hover:text-gray-300 focus:outline-none p-0"
           style={{ backgroundColor: 'transparent' }}>
             <X className="w-6 h-6 "  />
           </button>
@@ -249,7 +249,7 @@ const WorkoutSchedule: React.FC = () => {
             setShowCalendar(true);
             setIsEditing(false);
           }}
-          className="text-white-400 hover:text-gray-300 text-sm flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none"
+          className="text-white-400 hover:text-gray-300 text-sm flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none hover:underline"
         >
         <CalendarIcon className="w-4 h-4" /> View Full Calendar
         </button>
@@ -258,7 +258,7 @@ const WorkoutSchedule: React.FC = () => {
             setShowCalendar(true);
             setIsEditing(true);
           }}
-          className="text-white-400 hover:text-gray-300 text-sm flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none"
+          className="text-white-400 hover:text-gray-300 text-sm flex items-center gap-1 bg-transparent hover:bg-transparent focus:outline-none hover:underline"
         >
         <Edit2 className="w-4 h-4" /> Edit Schedule
         </button>

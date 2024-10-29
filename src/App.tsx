@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import WorkoutPlans from './pages/WorkoutPlans';
+import PersonalTraining from './pages/PersonalTraining';
 import ExerciseDatabase from './pages/ExerciseDatabase';
 import MembershipPlans from './pages/MembershipPlans';
 import Community from './pages/Community';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/personal-training" element={<PersonalTraining />} />
             <Route path="/workout-plans" element={<WorkoutPlans />} />
             <Route path="/exercise-database" element={<ExerciseDatabase />} />
             <Route path="/membership-plans" element={<MembershipPlans />} />

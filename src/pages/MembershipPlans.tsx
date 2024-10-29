@@ -53,7 +53,7 @@ const membershipPlans: MembershipPlan[] = [
     id: 1,
     name: 'Basic',
     price: 2500,
-    duration: 'Monthly',
+    duration: 'One Month',
     features: [
       'Access to gym facilities',
       'Basic workout plans',
@@ -66,7 +66,7 @@ const membershipPlans: MembershipPlan[] = [
     id: 2,
     name: 'Premium',
     price: 5000,
-    duration: 'Monthly',
+    duration: 'Three Months',
     features: [
       'Access to gym facilities',
       'Advanced workout plans',
@@ -81,7 +81,7 @@ const membershipPlans: MembershipPlan[] = [
     id: 3,
     name: 'Elite',
     price: 10000,
-    duration: 'Monthly',
+    duration: 'Six Months',
     features: [
       'Access to gym facilities',
       'Custom workout plans',
@@ -106,12 +106,12 @@ const OffersModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <Tag className="w-6 h-6 mr-2" />
             Current Offers
           </h3>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-300">✕</button>
+          <button onClick={onClose} className="text-white-400 hover:text-gray-300 bg-transparent hover:bg-transparent">✕</button>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {offers.map(offer => (
-            <div key={offer.id} className="border border-gray-700 rounded-lg p-4 hover:border-blue-500 transition-colors">
+            <div key={offer.id} className="border border-gray-700 rounded-lg p-4 hover:border-gray-500 transition-colors cursor-pointer">
               <div className="flex justify-between items-start mb-2">
                 <h4 className="font-semibold text-lg">{offer.title}</h4>
                 <span className="bg-blue-500 text-white px-2 py-1 rounded text-sm">{offer.discount}</span>
@@ -157,7 +157,7 @@ const PaymentForm: React.FC<{ plan: MembershipPlan; onClose: () => void }> = ({ 
       <div className="bg-dark-surface rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-2xl font-bold">Subscribe to {plan.name} Plan</h3>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-300">✕</button>
+          <button onClick={onClose} className="text-white-400 hover:text-gray-300 bg-transparent hover:bg-transparent">✕</button>
         </div>
 
         <div className="mb-6 p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800">
@@ -362,7 +362,7 @@ const MembershipPlans: React.FC = () => {
         <h2 className="text-2xl font-bold">Membership Plans</h2>
         <button
           onClick={() => setShowOffers(true)}
-          className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+          className="flex items-center gap-2 text-white-400 hover:text-gray-300 transition-colors bg-transparent hover:bg-transparent hover:underline"
         >
           <Tag className="w-4 h-4" />
           View Current Offers

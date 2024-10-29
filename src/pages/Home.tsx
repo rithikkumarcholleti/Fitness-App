@@ -43,10 +43,10 @@ const Home: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <Link to="/workout-plans" className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <Link to="/exercise-database" className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-600">
           <div className="flex flex-col items-center">
             <Dumbbell className="h-12 w-12 mb-4 text-blue-400" />
-            <h2 className="text-xl font-semibold mb-2">Workout Plans</h2>
+            <h2 className="text-xl font-semibold mb-2">Exercises</h2>
             <p className="text-gray-400">Customized plans for all levels</p>
           </div>
         </Link>

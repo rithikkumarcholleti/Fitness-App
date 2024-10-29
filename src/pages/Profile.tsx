@@ -63,7 +63,7 @@ const Profile: React.FC = () => {
             />
             {errors.height && <p className="text-red-500 text-sm mt-1">{errors.height.message}</p>}
           </div>
-          <button type="submit" className="bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600">
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
              Save Changes
           </button>
 
@@ -76,7 +76,7 @@ const Profile: React.FC = () => {
           <p><strong>Height:</strong> 161 cm</p>
           <button
             onClick={() => setIsEditing(true)}
-            className="mt-4 bg-cyan-500 text-white px-4 py-2 rounded-md hover:bg-cyan-600"
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
           >
             Edit Profile
           </button>
