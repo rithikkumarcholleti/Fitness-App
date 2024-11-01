@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import WorkoutPlans from './pages/WorkoutPlans';
 import PersonalTraining from './pages/PersonalTraining';
 import NutritionPlans from './pages/NutritionPlans';
+import DietPlan from './pages/DietPlan';
 import ExerciseDatabase from './pages/ExerciseDatabase';
 import MembershipPlans from './pages/MembershipPlans';
 import Community from './pages/Community';
@@ -44,10 +45,16 @@ function App() {
             element={isAuthenticated ? <NutritionPlans /> : <Navigate to="/login" />} 
           />
           <Route 
+            path="/nutrition-plans/:planType" 
+            element={isAuthenticated ? <DietPlan /> : <Navigate to="/login" />} 
+          />
+          <Route 
             path="/workout-plans" 
             element={isAuthenticated ? <WorkoutPlans /> : <Navigate to="/login" />} 
           />
-          <Route path="/personal-training" element= {isAuthenticated ? <PersonalTraining /> : <Navigate to="/login" />}
+          <Route 
+            path="/personal-training" 
+            element={isAuthenticated ? <PersonalTraining /> : <Navigate to="/login" />}
           />
           <Route 
             path="/exercise-database" 
