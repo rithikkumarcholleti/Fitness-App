@@ -38,7 +38,7 @@ const PaymentForm: React.FC<{ plan: any; onClose: () => void }> = ({ plan, onClo
         </div>
 
         <div className="mb-6 p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800">
-          <p className="text-xl">Total Amount: ₹{plan.price.toLocaleString()}</p>
+          <p className="text-xl">Total Amount: {plan.price.toLocaleString()}</p>
           <p className="text-sm text-gray-400">{plan.duration} subscription</p>
         </div>
 
@@ -217,10 +217,10 @@ const PaymentForm: React.FC<{ plan: any; onClose: () => void }> = ({ plan, onClo
             </button>
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-600 rounded-md hover:bg-blue-700 flex items-center"
+              className="px-6 py-2 bg-blue-600 rounded-md hover:bg-blue-800 flex items-center"
             >
               <Lock className="w-4 h-4 mr-2" />
-              Pay ₹{plan.price.toLocaleString()}
+              Pay {plan.price.toLocaleString()}
             </button>
           </div>
         </form>
@@ -269,7 +269,7 @@ const PersonalTraining: React.FC = () => {
             <p className="text-xl font-bold mb-4">{pkg.price}</p>
             <p className="text-gray-700 mb-4">{pkg.description}</p>
             <button
-              className="mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+              className="mt-auto bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-800 transition-colors duration-300"
               onClick={() => handleSelectPlan(pkg)}
             >
               Select Plan

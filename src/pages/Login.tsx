@@ -1,30 +1,18 @@
-// Login.tsx
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 type LoginFormData = {
   email: string;
   password: string;
 };
 
-interface LoginProps {
-  setIsAuthenticated: (authenticated: boolean) => void;
-}
-
-const Login: React.FC<LoginProps> = ({ setIsAuthenticated }) => {
-  const { register, handleSubmit, formState: { errors }, setError } = useForm<LoginFormData>();
-  const navigate = useNavigate();
+const Login: React.FC = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
 
   const onSubmit = (data: LoginFormData) => {
-    // Dummy credentials check
-    const isValid = data.email === "user@example.com" && data.password === "password";
-    if (isValid) {
-      setIsAuthenticated(true);
-      navigate("/"); // Redirect to home
-    } else {
-      setError("email", { type: "manual", message: "Credentials do not match" });
-    }
+    console.log(data);
+    // TODO: Implement login logic
   };
 
   return (
