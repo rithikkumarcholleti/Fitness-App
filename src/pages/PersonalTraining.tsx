@@ -34,7 +34,7 @@ const PaymentForm: React.FC<{ plan: any; onClose: () => void }> = ({ plan, onClo
       <div className="bg-dark-surface rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-2xl font-bold">Subscribe to {plan.name} Plan</h3>
-          <button onClick={onClose} className="text-white-400 hover:text-gray-300 bg-transparent hover:bg-transparent">✕</button>
+          <button onClick={onClose} className="text-white-400 hover:text-red-500 bg-transparent hover:bg-transparent">✕</button>
         </div>
 
         <div className="mb-6 p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800">

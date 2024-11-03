@@ -2,14 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-dark-bg text-dark-text;
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-input, select {
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Base styles */
+body {
+  @apply bg-dark-bg text-dark-text min-h-screen;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Form elements */
+input, select, textarea {
   @apply bg-dark-surface text-dark-text border-dark-border;
 }
 
+/* Buttons */
 button {
-  @apply bg-blue-600 hover:bg-blue-700 text-white;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+/* Container responsiveness */
+.container {
+  @apply px-4 sm:px-6 lg:px-8;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Modal responsiveness */
+.modal {
+  @apply fixed inset-0 z-50 overflow-y-auto;
+}
+
+.modal-content {
+  @apply relative transform overflow-hidden rounded-lg bg-dark-surface px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.hover-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+/* Responsive typography */
+h1 {
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+}
+
+h2 {
+  @apply text-xl sm:text-2xl md:text-3xl font-bold;
+}
+
+h3 {
+  @apply text-lg sm:text-xl md:text-2xl font-semibold;
+}
+
+/* Mobile-first padding and margins */
+.section {
+  @apply py-4 sm:py-6 md:py-8;
+}
+
+.section-inner {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Grid layouts */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+/* Responsive images */
+.img-responsive {
+  @apply w-full h-auto object-cover;
+}
+
+/* Navigation menu transitions */
+.menu-transition {
+  @apply transition-all duration-300 ease-in-out;
 }

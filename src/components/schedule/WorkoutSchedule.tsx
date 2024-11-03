@@ -115,7 +115,7 @@ const WorkoutSchedule: React.FC = () => {
       <div className="bg-dark-surface rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold">15-Day Workout Calendar</h3>
-          <button onClick={() => setShowCalendar(false)} className="text-white-400 hover:text-gray-500 focus:outline-none p-0"
+          <button onClick={() => setShowCalendar(false)} className="text-white-400 hover:text-red-500 focus:outline-none p-0"
           style={{ backgroundColor: 'transparent' }}>
             <X className="w-6 h-6" />
           </button>

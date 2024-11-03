@@ -36,64 +36,64 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="space-y-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-8">Welcome to GymApp</h1>
-        <p className="text-xl mb-12">Your personal fitness companion for achieving your goals</p>
+    <div className="space-y-8 px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-8">Welcome to MyFitness</h1>
+        <p className="text-lg sm:text-xl mb-8 sm:mb-12">Your personal fitness companion for achieving your goals</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <Link to="/exercise-database" className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-600">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <Link to="/exercise-database" className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700">
           <div className="flex flex-col items-center">
-            <Dumbbell className="h-12 w-12 mb-4 text-blue-400" />
-            <h2 className="text-xl font-semibold mb-2">Exercises</h2>
-            <p className="text-gray-400">Customized plans for all levels</p>
+            <Dumbbell className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-blue-400" />
+            <h2 className="text-lg sm:text-xl font-semibold mb-2">Exercises</h2>
+            <p className="text-sm sm:text-base text-gray-400 text-center">Customized plans for all levels</p>
           </div>
         </Link>
         
         <button 
           onClick={() => toggleSection('community')} 
-          className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700"
         >
           <div className="flex flex-col items-center">
-            <Users className="h-12 w-12 mb-4 text-green-400" />
-            <h2 className="text-xl font-semibold mb-2">Community</h2>
-            <p className="text-gray-400">Connect with fellow gym-goers</p>
+            <Users className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-green-400" />
+            <h2 className="text-lg sm:text-xl font-semibold mb-2">Community</h2>
+            <p className="text-sm sm:text-base text-gray-400 text-center">Connect with fellow gym-goers</p>
           </div>
         </button>
         
         <button 
           onClick={() => toggleSection('schedule')} 
-          className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700"
         >
           <div className="flex flex-col items-center">
-            <Calendar className="h-12 w-12 mb-4 text-purple-400" />
-            <h2 className="text-xl font-semibold mb-2">Schedule</h2>
-            <p className="text-gray-400">Plan your workouts efficiently</p>
+            <Calendar className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-purple-400" />
+            <h2 className="text-lg sm:text-xl font-semibold mb-2">Schedule</h2>
+            <p className="text-sm sm:text-base text-gray-400 text-center">Plan your workouts efficiently</p>
           </div>
         </button>
         
         <button 
           onClick={() => toggleSection('progress')} 
-          className="bg-dark-surface p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700"
         >
           <div className="flex flex-col items-center">
-            <TrendingUp className="h-12 w-12 mb-4 text-red-400" />
-            <h2 className="text-xl font-semibold mb-2">Progress Tracking</h2>
-            <p className="text-gray-400">Monitor your fitness journey</p>
+            <TrendingUp className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-red-400" />
+            <h2 className="text-lg sm:text-xl font-semibold mb-2">Progress Tracking</h2>
+            <p className="text-sm sm:text-base text-gray-400 text-center">Monitor your fitness journey</p>
           </div>
         </button>
       </div>
 
       {activeSection === 'community' && (
-        <div className="bg-dark-surface rounded-lg p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold">Featured Community Members</h3>
+        <div className="bg-dark-surface rounded-lg p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <h3 className="text-xl font-bold mb-2 sm:mb-0">Featured Community Members</h3>
             <Link to="/community" className="text-blue-400 hover:text-gray-500 text-sm">
               View All
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {featuredMembers.map(member => (
               <CommunityCard key={member.id} member={member} />
             ))}
@@ -102,13 +102,13 @@ const Home: React.FC = () => {
       )}
 
       {activeSection === 'schedule' && (
-        <div className="bg-dark-surface rounded-lg p-6">
+        <div className="bg-dark-surface rounded-lg p-4 sm:p-6">
           <WorkoutSchedule />
         </div>
       )}
 
       {activeSection === 'progress' && (
-        <div className="bg-dark-surface rounded-lg p-6">
+        <div className="bg-dark-surface rounded-lg p-4 sm:p-6">
           <ActivityTracker />
         </div>
       )}

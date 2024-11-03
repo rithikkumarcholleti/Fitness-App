@@ -81,7 +81,7 @@ const OffersModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       <div className="bg-dark-surface rounded-lg p-6 max-w-2xl w-full">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold">Current Offers</h3>
-          <button onClick={onClose} className="text-white-400 hover:text-gray-400 bg-transparent hover:bg-transparent">✕</button>
+          <button onClick={onClose} className="text-white-400 hover:text-red-500 bg-transparent hover:bg-transparent">✕</button>
         </div>
         <div className="space-y-4">
           <div className="border border-blue-500 rounded-lg p-4 bg-blue-900 bg-opacity-10">
@@ -148,7 +148,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ plan, onClose }) => {
       <div className="bg-dark-surface rounded-lg p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-bold">Subscribe to {plan.name}</h3>
-          <button onClick={onClose} className="text-white-400 hover:text-gray-500 bg-transparent hover:bg-transparent">✕</button>
+          <button onClick={onClose} className="text-white-400 hover:text-red-500 bg-transparent hover:bg-transparent">✕</button>
         </div>
 
         <div className="mb-6 p-4 bg-blue-900 bg-opacity-20 rounded-lg border border-blue-800">
