@@ -42,11 +42,11 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/rithikkumarcholleti/newsapp.git
+   git clone https://github.com/rithikkumarcholleti/Fitness-App.git
 
 2. Navigate to the project directory:
    ```bash
-   cd newsapp
+   cd Fitness-App
 
 3. Install the necessary dependencies:
    ```bash
@@ -54,43 +54,54 @@
 
 4. Istall react-router-dom for routing:
    ```bash
-   npm install react-router-dom
+   npm install express cors dotenv bcryptjs jsonwebtoken mongoose
 
-5. Sign up at News API to get your API key.
-
-6. Create a .env file in the root of the project and add your API key:
+5. Set up MongoDB connection:
+   - Create a MongoDB database and get the MongoDB URI.
+   - Create a .env file in the root of the project and add your MongoDB URI.
    ```bash
-   REACT_APP_NEWS_API_KEY=your_api_key_here
+    MONGODB_URI=your_mongodb_uri_here
+   JWT_SECRET=your_jwt_secret_key_here
 
+6. Run the sever:
+   ```bash
+   npm run server
+   
 7. Run the project:
    ```bash
-   npm run start
+   npm run dev
 
 ## Usage 
 1. **Run locally**: Start the development server with:
    ```bash
-   npm start
+   npm run dev
 
 2. **Access the application:**  Open your browser and go to:
    ```bash
-   http://localhost:3000
+   http://localhost:5000
 
-3. **Fetching News:** The app will automatically fetch the latest news articles using your News API key. You can filter news by categories like business, sports, entertainment, etc.
+3. **Create an Account:** Sign up to start logging your workouts, meals, and monitor progress.
 
 
 ## Screenshots
-![Screenshot 2024-10-21 222944](https://github.com/user-attachments/assets/4307fd5e-3e41-4b67-9941-1379b1311d2c)
-![Screenshot 2024-10-21 223012](https://github.com/user-attachments/assets/25484a36-758b-40ca-95c1-6547b62d667f)
-![Screenshot 2024-10-21 223031](https://github.com/user-attachments/assets/931f4dbb-7407-40fa-bd42-2935bd39b02f)
-![Screenshot 2024-10-21 223100](https://github.com/user-attachments/assets/cc211920-c2c4-4687-9d69-2a98b1b6ae8e)
+![Screenshot 2024-11-03 211016](https://github.com/user-attachments/assets/524cf326-6ee3-4994-9272-104b9bc3cdd2)
+![Screenshot 2024-11-03 211147](https://github.com/user-attachments/assets/259b3097-16da-406a-9644-5d0af0b9a5d6)
+![Screenshot 2024-11-03 211226](https://github.com/user-attachments/assets/0a24bcd5-e59f-41a8-a84a-6eb75f72fd9a)
+![Screenshot 2024-11-03 211301](https://github.com/user-attachments/assets/4cd202f7-3fcb-41fe-9195-87320fc71632)
+![Screenshot 2024-11-03 211315](https://github.com/user-attachments/assets/a9df5c94-3ca9-4fe2-90b9-f1e6071f9ea0)
+![Screenshot 2024-11-03 211327](https://github.com/user-attachments/assets/a18d8c24-76ef-4aef-94b7-7e5555b7cdbd)
+![Screenshot 2024-11-03 211354](https://github.com/user-attachments/assets/52218d52-4520-44c1-846e-5bb065a4e16b)
+![Screenshot 2024-11-03 211406](https://github.com/user-attachments/assets/49df7ed4-60e7-4e21-99c3-730ce14b5d55)
+![Screenshot 2024-11-03 211417](https://github.com/user-attachments/assets/df76c34c-a2dd-420b-863c-9c7ebb0d2734)
+![Screenshot 2024-11-03 211429](https://github.com/user-attachments/assets/2bf63966-34d9-408b-ada5-74bc84974c97)
+![Screenshot 2024-11-03 211441](https://github.com/user-attachments/assets/f9ad9ed5-fe7c-4be9-afea-bc366882a419)
+![Screenshot 2024-11-03 211453](https://github.com/user-attachments/assets/e2fdba84-ce54-4b52-a678-a0df4d5a7cec)
 
 
 ## Technologies
-- React
-- React Router DOM
-- HTML
-- News API
-- CSS/Bootstrap/Material-UI (for styling)
+- **Frontend** : React, Typescript, JavaScript, HTML, CSS
+- **Backend** : Node.js, Express, MongoDB (using Mongoose)
+
 
 
 ## Project Structure
@@ -98,20 +109,66 @@
 Overview of project structure:
 
 ```bash
-├── public
-│   ├── index.html
+├── backend
+│   └── server.js
 ├── src
 │   ├── components
-│   │   ├── NavBar.js
-│   │   ├── NewsList.js
-│   │   ├── News.js
-│   │   ├── Footer.js
-│   │   └── Spinner.js
-│   ├── App.js
-│   ├── index.js
-│   └── .env
-├── README.md
-└── package.json
+│   │   ├── community
+│   │   │   └── CommunityCard.tsx 
+│   │   ├── exercises
+│   │   │   ├── ExerciseCard.tsx
+│   │   │   └── ExerciseFilters.tsx
+│   │   ├── progress
+│   │   │   └── ActivityTracker.tsx
+│   │   ├── schedule
+│   │   │   └── WorkoutSchedule.tsx
+│   │   ├── workouts
+│   │   │   ├── SupplementaryWorkouts.tsx
+│   │   │   ├── WorkoutDayCard.tsx
+│   │   │   ├── WorkoutSplitCard.tsx
+│   │   │   └── WorkoutSplitSelector.tsx
+│   │   └── Navbar.tsx
+│   ├── contexts
+│   │   └── AuthContext.tsx
+│   ├── data
+│   │   ├── exercise.ts
+│   │   └── workoutSplits.ts
+│   ├── pages
+│   │   ├── BMICalculator.tsx
+│   │   ├── Community.tsx
+│   │   ├── DietPlan.tsx
+│   │   ├── ExerciseDatabse.tsx
+│   │   ├── Home.tsx
+│   │   ├── Login.tsx
+│   │   ├── MembershipPlans.tsx
+│   │   ├── NutritionPlans.tsx
+│   │   ├── PersonalTraining.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Progress.tsx
+│   │   ├── Register.tsx
+│   │   ├── Schedule.tsx
+│   │   └── WorkoutPlans.tsx
+│   ├── services
+│   │   └── api.ts
+│   ├── types
+│   │   ├── exercise.ts
+│   │   └── workout.ts
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── .env.local
+├── eslint.config.js
+├── GYMLOGO.png
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig,node.json
+└── vite.config.ts
 ```
 
 ## Contributing
@@ -140,4 +197,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 Rithik Kumar Cholleti - [LinkedIn](https://www.linkedin.com/in/rithik-cholleti-394973317/) - [Email](mailto:rithikkumarcholleti@gmail.com)  
-Project Link: [Newsapp](https://github.com/rithikkumarcholleti/newsapp)
+Project Link: [Fitness-App](https://github.com/rithikkumarcholleti/Fitness-App)
