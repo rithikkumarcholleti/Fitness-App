@@ -22,21 +22,23 @@ export const workoutSplits: WorkoutSplit[] = [
         {
           name: 'Push Day',
           exercises: [
-            { name: 'Bench Press', sets: '4', reps: '8-12' },
+            { name: 'Flat Bench Press', sets: '4', reps: '8-12' },
+            { name: 'Cable Flyes', sets: '4', reps: '12-15' },
             { name: 'Overhead Shoulder Press', sets: '4', reps: '8-12' },
-            { name: 'Tricep Dips', sets: '3', reps: '10-15' },
-            { name: 'Dumbbell Flyes', sets: '3', reps: '12-15' },
-            { name: 'Push-ups', sets: '3', reps: 'To failure' }
+            { name: 'Lateral Raises', sets: '4', reps: '8-12' },
+            { name: 'Skull Crushers', sets: '4', reps: '8-12' },
+            { name: 'Rope Pushdowns', sets: '4', reps: '8-12' },
           ]
         },
         {
           name: 'Pull Day',
           exercises: [
             { name: 'Deadlifts', sets: '4', reps: '6-8' },
-            { name: 'Pull-ups', sets: '4', reps: '8-12' },
-            { name: 'Barbell Row', sets: '3', reps: '8-12' },
+            { name: 'Lat PullDown', sets: '4', reps: '8-12' },
+            { name: 'Barbell Rows', sets: '3', reps: '8-12' },
             { name: 'Bicep Curls', sets: '3', reps: '12-15' },
-            { name: 'Face Pulls', sets: '3', reps: '15-20' }
+            { name: 'Hammer Curls', sets: '3', reps: '12-15' },
+            { name: 'Preacher Curls', sets: '3', reps: '12-15' }
           ]
         },
         {
@@ -44,8 +46,9 @@ export const workoutSplits: WorkoutSplit[] = [
           exercises: [
             { name: 'Squats', sets: '4', reps: '8-12' },
             { name: 'Lunges', sets: '3', reps: '12 each leg' },
-            { name: 'Romanian Deadlifts', sets: '3', reps: '10-12' },
             { name: 'Leg Press', sets: '3', reps: '12-15' },
+            { name: 'Leg Curls', sets: '4', reps: '12-15' },
+            { name: 'Reverse Leg Curls', sets: '4', reps: '12-15' },
             { name: 'Calf Raises', sets: '4', reps: '15-20' }
           ]
         }
@@ -81,12 +84,12 @@ export const workoutSplits: WorkoutSplit[] = [
     description: 'Traditional 5-day split targeting one major muscle group per day for maximum volume and recovery.',
     daysPerWeek: 5,
     schedule: [
-      'Day 1: Chest',
-      'Day 2: Back',
-      'Day 3: Legs',
-      'Day 4: Shoulders',
-      'Day 5: Arms',
-      'Day 6: Rest',
+      'Day 1: Chest/Tricep',
+      'Day 2: Back/Bicep',
+      'Day 3: Shoulders/Legs',
+      'Day 4: Chest/Tricep',
+      'Day 5: Back/Bicep',
+      'Day 6: Shoulders/Legs',
       'Day 7: Rest'
     ],
     icon: 'users',
@@ -94,53 +97,69 @@ export const workoutSplits: WorkoutSplit[] = [
     workoutDays: {
       main: [
         {
-          name: 'Chest Day',
+          name: 'Chest & Tricep Day',
           exercises: [
             { name: 'Flat Bench Press', sets: '4', reps: '8-12' },
-            { name: 'Incline Dumbbell Press', sets: '4', reps: '8-12' },
-            { name: 'Decline Bench Press', sets: '3', reps: '10-12' },
-            { name: 'Cable Flyes', sets: '3', reps: '12-15' },
+            { name: 'Incline dumbbell Press', sets: '4', reps: '12-15' },
+            { name: 'Peck Deck Flyes', sets: '4', reps: '12-15' },
+            { name: 'Skull Crushers', sets: '4', reps: '10-12' },
+            { name: 'Rope Pushdowns', sets: '4', reps: '10-12' },
             { name: 'Push-ups', sets: '3', reps: 'To failure' }
           ]
         },
         {
-          name: 'Back Day',
+          name: 'Back & Bicep Day',
           exercises: [
             { name: 'Deadlifts', sets: '4', reps: '6-8' },
-            { name: 'Weighted Pull-ups', sets: '4', reps: '8-12' },
+            { name: 'Lat PullDown', sets: '4', reps: '8-12' },
             { name: 'Barbell Rows', sets: '3', reps: '8-12' },
-            { name: 'Lat Pulldowns', sets: '3', reps: '12-15' },
-            { name: 'Cable Rows', sets: '3', reps: '12-15' }
+            { name: 'Bicep Curls', sets: '3', reps: '12-15' },
+            { name: 'Preacher Curls', sets: '4', reps: '12-15' },
+            { name: 'Pull-ups', sets: '3', reps: 'To Failure' }
           ]
         },
         {
-          name: 'Leg Day',
+          name: 'Shoulders & Leg Day',
           exercises: [
-            { name: 'Back Squats', sets: '4', reps: '8-12' },
-            { name: 'Romanian Deadlifts', sets: '4', reps: '8-12' },
-            { name: 'Leg Press', sets: '3', reps: '12-15' },
-            { name: 'Walking Lunges', sets: '3', reps: '12 each leg' },
-            { name: 'Standing Calf Raises', sets: '4', reps: '15-20' }
+            { name: 'Overhead Shoulder Press', sets: '4', reps: '8-12' },
+            { name: 'Lateral Raises', sets: '4', reps: '8-12' },
+            { name: 'Arnlod Press', sets: '3', reps: '12-15' },
+            { name: 'Squats', sets: '4', reps: '8-12' },
+            { name: 'Leg Curls', sets: '4', reps: '12-15' },
+            { name: 'Leg Press', sets: '4', reps: '12-15' }
           ]
         },
         {
-          name: 'Shoulder Day',
+          name: 'Chest & Tricep Day',
           exercises: [
-            { name: 'Military Press', sets: '4', reps: '8-12' },
-            { name: 'Lateral Raises', sets: '4', reps: '12-15' },
-            { name: 'Front Raises', sets: '3', reps: '12-15' },
-            { name: 'Reverse Flyes', sets: '3', reps: '12-15' },
-            { name: 'Shrugs', sets: '3', reps: '15-20' }
+            { name: 'Decline Bench Press', sets: '4', reps: '8-12' },
+            { name: 'Cable Flyes', sets: '4', reps: '12-15' },
+            { name: 'Incline dumbbell Press', sets: '4', reps: '12-15' },
+            { name: 'Rope PushDowns', sets: '3', reps: '12-15' },
+            { name: 'Overhead Tricep Extensions', sets: '3', reps: '12-15' },
+            { name: 'Push-ups', sets: '3', reps: 'To Failure' }
           ]
         },
         {
-          name: 'Arms Day',
+          name: 'Back & Bicep Day',
           exercises: [
-            { name: 'Barbell Curls', sets: '4', reps: '8-12' },
-            { name: 'Skull Crushers', sets: '4', reps: '8-12' },
+            { name: 'Seated Rows', sets: '4', reps: '8-12' },
+            { name: 'Straight Arm PullDown', sets: '4', reps: '8-12' },
+            { name: 'Lat PullDown', sets: '4', reps: '8-12' },
+            { name: 'Bicep Curls', sets: '3', reps: '12-15' },
             { name: 'Hammer Curls', sets: '3', reps: '12-15' },
-            { name: 'Tricep Pushdowns', sets: '3', reps: '12-15' },
-            { name: 'Preacher Curls', sets: '3', reps: '12-15' }
+            { name: 'Pull-Ups', sets: '3', reps: 'To Failure' }
+          ]
+        },
+        {
+          name: 'Shoulders & Leg Day',
+          exercises: [
+            { name: 'Upright Rows', sets: '4', reps: '8-12' },
+            { name: 'Reverse Peck Deck', sets: '4', reps: '8-12' },
+            { name: 'Shrugs', sets: '3', reps: '15-20' },
+            { name: 'Leg Press(Hamstring)', sets: '3', reps: '12-15' },
+            { name: 'Reverse Leg Curls', sets: '3', reps: '12-15' },
+            { name: 'Calf Raises', sets: '3', reps: '15-20' }
           ]
         }
       ],
@@ -190,51 +209,56 @@ export const workoutSplits: WorkoutSplit[] = [
         {
           name: 'Chest Focus',
           exercises: [
-            { name: 'Flat Bench Press', sets: '5', reps: '6-8' },
-            { name: 'Incline Smith Machine Press', sets: '4', reps: '8-10' },
-            { name: 'Decline Dumbbell Press', sets: '4', reps: '8-12' },
+            { name: 'Flat Bench Press', sets: '4', reps: '8-12' },
+            { name: 'Incline dumbbell Press', sets: '4', reps: '12-15' },
+            { name: 'Decline Dumbbell Press', sets: '4', reps: '12-15' },
             { name: 'Pec Deck Flyes', sets: '3', reps: '12-15' },
-            { name: 'Weighted Dips', sets: '3', reps: '10-12' }
+            { name: 'Cable Flyes', sets: '3', reps: '12-15' },
+            { name: 'Pushups', sets: '3', reps: 'To Failure' }
           ]
         },
         {
           name: 'Back Focus',
           exercises: [
-            { name: 'Barbell Deadlifts', sets: '5', reps: '5-8' },
-            { name: 'Weighted Pull-ups', sets: '4', reps: '6-10' },
-            { name: 'T-Bar Rows', sets: '4', reps: '8-12' },
-            { name: 'Meadows Rows', sets: '3', reps: '10-12' },
-            { name: 'Straight Arm Pulldowns', sets: '3', reps: '12-15' }
+            { name: 'Deadlifts', sets: '5', reps: '5-8' },
+            { name: 'Lat PullDown', sets: '4', reps: '12-15' },
+            { name: 'Barbell Rows', sets: '4', reps: '8-12' },
+            { name: 'Seated Rows', sets: '3', reps: '12-15' },
+            { name: 'Straight Arm PullDown', sets: '3', reps: '12-15' },
+            { name: 'Pull-ups', sets: '3', reps: 'To Failure' }
           ]
         },
         {
           name: 'Legs Focus',
           exercises: [
-            { name: 'Front Squats', sets: '5', reps: '6-8' },
-            { name: 'Bulgarian Split Squats', sets: '4', reps: '8-12 each' },
-            { name: 'Hack Squats', sets: '4', reps: '8-12' },
-            { name: 'Glute-Ham Raises', sets: '3', reps: '12-15' },
-            { name: 'Seated Calf Raises', sets: '4', reps: '15-20' }
+            { name: 'Squats', sets: '5', reps: '6-8' },
+            { name: 'Lunges', sets: '4', reps: '8-12 each' },
+            { name: 'Sumo Deadlift', sets: '4', reps: '8-12' },
+            { name: 'Leg Press', sets: '3', reps: '12-15' },
+            { name: 'Seated & Reverse Leg Curls', sets: '4', reps: '15-20' },
+            { name: 'Calf Raises', sets: '3', reps: '12-15' }
           ]
         },
         {
           name: 'Shoulders Focus',
           exercises: [
-            { name: 'Seated Military Press', sets: '5', reps: '6-8' },
-            { name: 'Viking Press', sets: '4', reps: '8-12' },
-            { name: 'Cable Lateral Raises', sets: '4', reps: '12-15' },
+            { name: 'Overhead Shoulder Press', sets: '4', reps: '8-12' },
+            { name: 'Lateral Raises', sets: '4', reps: '8-12' },
+            { name: 'Arnold Press', sets: '4', reps: '12-15' },
             { name: 'Reverse Pec Deck', sets: '3', reps: '12-15' },
-            { name: 'Face Pulls', sets: '3', reps: '15-20' }
+            { name: 'Upright Rows', sets: '3', reps: '12-15' },
+            { name: 'Shrugs', sets: '3', reps: '15-20' }
           ]
         },
         {
           name: 'Arms Focus',
           exercises: [
-            { name: 'EZ Bar Curls', sets: '4', reps: '8-12' },
-            { name: 'Close Grip Bench', sets: '4', reps: '8-12' },
-            { name: 'Incline Dumbbell Curls', sets: '3', reps: '12-15' },
+            { name: 'Bicep Curls', sets: '4', reps: '8-12' },
+            { name: 'Preacher Curls', sets: '4', reps: '8-12' },
+            { name: 'Hammer Curls', sets: '3', reps: '12-15' },
             { name: 'Overhead Tricep Extensions', sets: '3', reps: '12-15' },
-            { name: 'Cable Concentration Curls', sets: '3', reps: '12-15' }
+            { name: 'Skull Crushers', sets: '3', reps: '12-15' },
+            { name: 'Rope Pushdowns', sets: '3', reps: '12-15' }
           ]
         }
       ],

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Dumbbell, Users, Calendar, TrendingUp } from 'lucide-react';
 import CommunityCard from '../components/community/CommunityCard';
 import WorkoutSchedule from '../components/schedule/WorkoutSchedule';
@@ -30,9 +30,14 @@ const featuredMembers = [
 
 const Home: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const toggleSection = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
+  };
+
+  const handleExerciseClick = () => {
+    navigate('/exercise-database');
   };
 
   return (
@@ -43,17 +48,20 @@ const Home: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-        <Link to="/exercise-database" className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700">
+        <button 
+          onClick={handleExerciseClick}
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-600"
+        >
           <div className="flex flex-col items-center">
             <Dumbbell className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-blue-400" />
             <h2 className="text-lg sm:text-xl font-semibold mb-2">Exercises</h2>
             <p className="text-sm sm:text-base text-gray-400 text-center">Customized plans for all levels</p>
           </div>
-        </Link>
+        </button>
         
         <button 
           onClick={() => toggleSection('community')} 
-          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
         >
           <div className="flex flex-col items-center">
             <Users className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-green-400" />
@@ -64,7 +72,7 @@ const Home: React.FC = () => {
         
         <button 
           onClick={() => toggleSection('schedule')} 
-          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
         >
           <div className="flex flex-col items-center">
             <Calendar className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-purple-400" />
@@ -75,7 +83,7 @@ const Home: React.FC = () => {
         
         <button 
           onClick={() => toggleSection('progress')} 
-          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-700"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
         >
           <div className="flex flex-col items-center">
             <TrendingUp className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-red-400" />
