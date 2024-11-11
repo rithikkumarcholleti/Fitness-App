@@ -61,7 +61,7 @@ const Home: React.FC = () => {
         
         <button 
           onClick={() => toggleSection('community')} 
-          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-600"
         >
           <div className="flex flex-col items-center">
             <Users className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-green-400" />
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
         
         <button 
           onClick={() => toggleSection('schedule')} 
-          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-600"
         >
           <div className="flex flex-col items-center">
             <Calendar className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-purple-400" />
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         
         <button 
           onClick={() => toggleSection('progress')} 
-          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          className="bg-dark-surface p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 hover:bg-blue-600"
         >
           <div className="flex flex-col items-center">
             <TrendingUp className="h-8 sm:h-12 w-8 sm:w-12 mb-3 sm:mb-4 text-red-400" />
