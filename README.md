@@ -4,7 +4,10 @@
 *A complete fitness application built with TypeScript, JavaScript, React, HTML, CSS, and MongoDB. This app helps users track their workouts, manage nutrition plans, and monitor fitness progress, providing an engaging user experience through an intuitive UI.*
 
 ---
+## Project Link
+https://fitness-app-gamma-ecru.vercel.app/
 
+---
 ## Table of Contents
 1. [Features](#features)
 2. [Installation](#installation)
