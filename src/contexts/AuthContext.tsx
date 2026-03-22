@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 interface User {
   name: string;
@@ -8,25 +9,21 @@ interface User {
   age: number;
   weight: number;
   height: number;
-  imageUrl: string;
+  imageUrl?: string;
 }
 
 interface AuthContextType {
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  register: (userData: Omit<User, 'imageUrl'> & { password: string }) => Promise<void>;
+  register: (data: any) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
-  updateProfile: (data: Partial<User>) => void;
+  updateProfile: (data: Partial<User>) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const getDefaultImage = (gender: 'male' | 'female') => {
-  return gender === 'male' 
-    ? 'https://images.unsplash.com/photo-1618886614638-80e3c103d31a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80'
-    : 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80';
-};
+const API_URL = 'http://localhost:5000/api';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
@@ -34,54 +31,71 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-      setIsAuthenticated(true);
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetchProfile(token);
     }
   }, []);
 
-  const register = async (userData: Omit<User, 'imageUrl'> & { password: string }) => {
-    const { password, ...rest } = userData;
-    const newUser = {
-      ...rest,
-      imageUrl: getDefaultImage(userData.gender)
-    };
-    
-    // In a real app, you'd make an API call here
-    localStorage.setItem('user', JSON.stringify(newUser));
-    setUser(newUser);
-    setIsAuthenticated(true);
-    navigate('/login');
+  const fetchProfile = async (token: string) => {
+    try {
+      const response = await axios.get(`${API_URL}/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      setUser(response.data);
+      setIsAuthenticated(true);
+    } catch (err) {
+      localStorage.removeItem('token');
+      setUser(null);
+      setIsAuthenticated(false);
+    }
+  };
+
+  const register = async (data: any) => {
+    try {
+      await axios.post(`${API_URL}/register`, data);
+      navigate('/login');
+    } catch (error: any) {
+      throw error; // pass error to Register.tsx
+    }
   };
 
   const login = async (email: string, password: string) => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      if (user.email === email) {
-        setUser(user);
-        setIsAuthenticated(true);
-        navigate('/');
-        return;
-      }
+    try {
+      const response = await axios.post(`${API_URL}/login`, { email, password });
+
+      const token = response.data.data.token;
+
+      localStorage.setItem('token', token);
+
+      await fetchProfile(token);
+
+      navigate('/');
+    } catch (error: any) {
+      throw error; // pass error to Login.tsx
     }
-    throw new Error('Invalid credentials');
   };
 
   const logout = () => {
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
     setUser(null);
     setIsAuthenticated(false);
     navigate('/login');
   };
 
-  const updateProfile = (data: Partial<User>) => {
-    if (user) {
-      const updatedUser = { ...user, ...data };
-      localStorage.setItem('user', JSON.stringify(updatedUser));
-      setUser(updatedUser);
-    }
+  const updateProfile = async (data: Partial<User>) => {
+    const token = localStorage.getItem('token');
+
+    const response = await axios.put(`${API_URL}/profile`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    setUser(response.data);
   };
 
   return (
@@ -93,8 +107,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
+  if (!context) throw new Error('useAuth must be used inside AuthProvider');
   return context;
 };

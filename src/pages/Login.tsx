@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 type LoginFormData = {
   email: string;
@@ -9,10 +10,14 @@ type LoginFormData = {
 
 const Login: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
+  const { login } = useAuth();
 
-  const onSubmit = (data: LoginFormData) => {
-    console.log(data);
-    // TODO: Implement login logic
+  const onSubmit = async (data: LoginFormData) => {
+    try {
+      await login(data.email, data.password);
+    } catch (error: any) {
+      alert(error.response?.data?.message || 'Login failed');
+    }
   };
 
   return (
@@ -29,6 +34,7 @@ const Login: React.FC = () => {
           />
           {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>}
         </div>
+
         <div>
           <label htmlFor="password" className="block mb-1">Password</label>
           <input
@@ -39,10 +45,12 @@ const Login: React.FC = () => {
           />
           {errors.password && <p className="text-red-400 text-sm mt-1">{errors.password.message}</p>}
         </div>
+
         <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
           Login
         </button>
       </form>
+
       <p className="mt-4 text-center">
         Don't have an account? <Link to="/register" className="text-blue-400 hover:underline">Register here</Link>
       </p>
